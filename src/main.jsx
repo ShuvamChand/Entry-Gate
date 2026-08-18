@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Entry-Gate/">
       <App />
       <ToastContainer></ToastContainer>
     </BrowserRouter>

@@ -58,7 +58,6 @@ const FIELD_LABELS = {
   checkInRemarks: "Check In Remarks",
 };
 
-
 export default function VehicleEntryForm() {
   const [form, setForm] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState({});
@@ -389,7 +388,11 @@ export default function VehicleEntryForm() {
           {apiError && <p className="vef-api-error">{apiError}</p>}
 
           <div className="vef-actions">
-            <button type="submit" className="vef-btn vef-btn-primary" disabled={loading}>
+            <button
+              type="submit"
+              className="vef-btn vef-btn-primary"
+              disabled={loading}
+            >
               {loading ? "Saving..." : "Insert"}
             </button>
             <button
@@ -444,10 +447,10 @@ export default function VehicleEntryForm() {
               <tbody>
                 {entries.map((entry) => (
                   <tr
-                    key={entry.id}
+                    key={entry._id}
                     onClick={() => handleSelectRow(entry)}
                     className={
-                      entry.id === selectedId ? "vef-row-selected" : ""
+                      entry._id === selectedId ? "vef-row-selected" : ""
                     }
                   >
                     <td>{entry.officeName}</td>
